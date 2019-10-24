@@ -12,23 +12,27 @@ knitr::opts_chunk$set(echo = TRUE)
 ## Requirements
 R-base
 
-## Preparation
-Reading - 10 min
-Execute - 20 min
-
 ## Ingredients
 
-- N if statements
-- N else statements
+- A bunch of if/else statements
+- 3 functions
+- 1/2 function arguments
 
 ## Method
 
+
+It is clear that factors play a major role that will be used by all formula, regardless of the case we are examing. Thus, it seems reasonable to start by writing a function that can report the factor of any number will need.  Basically, a factor is the product of an value and all the values lower than it. R base library already offers the solution through the commands "factorial". However, since everything here is home-made, we are going to build our function. It won't shine as the original, but it will be ours.
+
 ```{r factorial_function}
 f.fact <- function(x) {
-  if (x[1] == 0) {
+  if (x[1] == 0) { 
     return(1)
   } else {
     return(x * f.fact(x - 1))
   }
 }
 ```
+
+The function uses of recursion, a programming technique where a function calls itself. In this case, our function call itself, but it passes the original value minus 1, and so on. In the end, it will return the factor of any number will ask.
+
+Now, let's build the ,
