@@ -6,7 +6,6 @@
 
 f.fact <- function(x) {
   if (x[1] == 0) {
-    # "[1]" was added in case x is a vector: otherwise there will warning messages about the length of x compared to a single value (ie 0)
     return(1)
   } else {
     #print(x)
@@ -21,9 +20,10 @@ factorial(fact.numbers) == f.fact(fact.numbers)
 # but they are not considered equivalent. But for > 100 yes, because they
 # both return "Inf".
 
-# #NB# Factorial works with vectors, while my function does not.
-# How do I pass a vector to my function?
-# #SOLVED# r always passes argument as vectors! Try this:
+# #NB# f.fact might receive a vector as argument
+# This throws an error message when comparing "x" to "0"
+# because of the length of x compared to the length of a single value
+# "[1]" was added in case x is a vector
 f.fact(c(2:4))
 
 # #IDEA# "Deploy" this functions in a Shiny app
